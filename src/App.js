@@ -49,7 +49,7 @@ const App = () => {
       </button>
       {exportedData && (
         <pre className="exported-data">
-          Exported Data: {exportedData}
+           {exportedData}
         </pre>
       )}
     </div>
