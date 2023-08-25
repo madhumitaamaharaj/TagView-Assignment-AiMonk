@@ -18,7 +18,7 @@ const initialTree = {
 
 const App = () => {
   const [tree, setTree] = useState(initialTree);
-
+  const [exportedData, setExportedData] = React.useState(null);
   const handleAddChild = (parentTag) => {
     const newChild = { name: `new-child-${Date.now()}`, data: '' };
     parentTag.children.push(newChild);
@@ -36,8 +36,9 @@ const App = () => {
   };
 
   const handleExport = () => {
-    const exportedData = JSON.stringify(tree, null, 2); 
-    console.log(exportedData);
+    const exportedDataString = JSON.stringify(tree, null, 2);
+    setExportedData(exportedDataString); 
+    console.log(exportedDataString);
   };
 
   return (
@@ -46,6 +47,11 @@ const App = () => {
       <button onClick={handleExport} className="export-button">
         Export
       </button>
+      {exportedData && (
+        <pre className="exported-data">
+          Exported Data: {exportedData}
+        </pre>
+      )}
     </div>
   );
 };

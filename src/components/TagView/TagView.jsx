@@ -5,7 +5,7 @@ const TagView = ({ tag, onAddChild, onUpdateName, onUpdateData }) => {
   const [name, setName] = React.useState(tag.name);
   const [isEditingName, setIsEditingName] = React.useState(false);
   const [isCollapsed, setIsCollapsed] = React.useState(false);
-
+  
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
