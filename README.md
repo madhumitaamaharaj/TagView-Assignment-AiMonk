@@ -16,4 +16,10 @@ Clone the repository: git clone https://github.com/madhumitaamaharaj/TagView-Ass
 
 Install node modules.(npm i) npm start
 
+# Deployment Link- 
+https://tag-view.netlify.app/
+
+# video Link-
+https://drive.google.com/drive/folders/1HG6rh-0kziCpdkwMqnKQCTKhqZ8BqUqz?usp=sharing
+
 # Project Contribution - Madhumita Chaudhuri (madhumitamaharaj7@gmail.com)
