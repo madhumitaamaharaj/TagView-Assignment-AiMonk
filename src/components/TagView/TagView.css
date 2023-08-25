@@ -1,0 +1,28 @@
+.tag {
+    border: 3px solid #eeecec;
+    padding: 8px;
+    margin: 8px;
+    background-color: #8fbff3;
+  }
+  
+  .tag-name {
+    font-weight: bold;
+  }
+  
+  .tag-children {
+    margin-left: 20px;
+   
+  }
+  
+  .tag-data {
+    width: 20%;
+    margin: 8px 0;
+  }
+  
+  .add-child-button {
+    background-color: #e7e5e5;
+    color: rgb(3, 3, 3);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
