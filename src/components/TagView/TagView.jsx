@@ -5,7 +5,8 @@ const TagView = ({ tag, onAddChild, onUpdateName, onUpdateData }) => {
   const [name, setName] = React.useState(tag.name);
   const [isEditingName, setIsEditingName] = React.useState(false);
   const [isCollapsed, setIsCollapsed] = React.useState(false);
-  
+  const [newChildName, setNewChildName] = React.useState('');
+
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
@@ -20,10 +21,14 @@ const TagView = ({ tag, onAddChild, onUpdateName, onUpdateData }) => {
   };
 
   const handleAddChild = () => {
-    if (tag.children === undefined) {
+    if (!tag.children) {
       tag.children = [];
     }
-    onAddChild(tag);
+    const initialChildName = `nested ${newChildName || 'child'}`; 
+    const newChild = { name: initialChildName, children: [], data: '' };
+    tag.children.push(newChild);
+    onAddChild(newChild); 
+    setNewChildName('');
   };
 
   const handleToggleCollapse = () => {
@@ -52,6 +57,10 @@ const TagView = ({ tag, onAddChild, onUpdateName, onUpdateData }) => {
         ) : (
           <span onClick={handleNameEdit}>{tag.name}</span>
         )}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onClick={handleAddChild} className="add-child-button">
+          Add Child
+        </button>
       </div>
       {!isCollapsed && tag.children && (
         <div className="tag-children">
@@ -59,7 +68,7 @@ const TagView = ({ tag, onAddChild, onUpdateName, onUpdateData }) => {
             <TagView
               key={child.name}
               tag={child}
-              onAddChild={handleAddChild}
+              onAddChild={onAddChild}
               onUpdateName={onUpdateName}
               onUpdateData={onUpdateData}
             />
@@ -76,11 +85,6 @@ const TagView = ({ tag, onAddChild, onUpdateName, onUpdateData }) => {
             className="tag-data"
           />
         </div>
-      )}
-      {!tag.children && (
-        <button onClick={handleAddChild} className="add-child-button">
-          Add Child
-        </button>
       )}
     </div>
   );
