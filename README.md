@@ -17,7 +17,7 @@ Clone the repository: git clone https://github.com/madhumitaamaharaj/TagView-Ass
 Install node modules.(npm i) npm start
 
 # Deployment Link- 
-https://tag-view.netlify.app/
+https://tag-view-assignment-ai-monk-lzj1jp0xj-madhumitaamaharaj.vercel.app/
 
 # Video Link-
 https://drive.google.com/drive/folders/1HG6rh-0kziCpdkwMqnKQCTKhqZ8BqUqz?usp=sharing
